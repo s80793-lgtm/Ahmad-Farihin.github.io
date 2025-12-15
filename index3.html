@@ -16,7 +16,7 @@
       --border: #e5e7eb;
       --text-primary: #0f172a;
       --text-secondary: #64748b;
-      --accent: #0b3c5d; /* Ocean Blue (UMT-inspired) */
+      --accent: #0b3c5d; /* Ocean Blue */
       --radius: 16px;
     }
 
@@ -52,6 +52,23 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+.profile {
+  grid-column: span 6;
+  grid-row: span 2;
+
+  background-image: url('bg.jpg');//kene pastikan bg.jpg ada dalam folder yang sama
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+    /* Hover effect */
+    .card:hover {
+      transform: scale(1.02);
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
     }
 
     .card h2 {
@@ -81,6 +98,10 @@
       grid-column: span 3;
     }
 
+    .reflection {
+      grid-column: span 3;
+    }
+
     .tech {
       grid-column: span 6;
     }
@@ -96,7 +117,6 @@
     .profile .name {
       font-size: 1.6rem;
       font-weight: 700;
-      letter-spacing: 0.3px;
     }
 
     .profile .program {
@@ -118,11 +138,18 @@
       font-size: 0.85rem;
     }
 
-    .social-links span {
+    .social-links a {
       padding: 6px 12px;
       border: 1px solid var(--border);
       border-radius: 999px;
+      text-decoration: none;
       color: var(--text-secondary);
+      transition: background-color 0.2s ease, color 0.2s ease;
+    }
+
+    .social-links a:hover {
+      background-color: var(--accent);
+      color: #ffffff;
     }
 
     .playlist .player {
@@ -146,6 +173,7 @@
       .profile,
       .location,
       .hobby,
+      .reflection,
       .tech,
       .case-study,
       .playlist {
@@ -157,34 +185,44 @@
 <body>
   <div class="container">
     <div class="grid">
-      <!-- Card 1: Profile -->
+
+      <!-- Profile -->
       <div class="card profile">
         <div>
-          <div class="name">AHMAD FARIHIM</div>
+          <div class="name">AHMAD FARIHIN</div>
           <div class="program">Agrotechnology • Year 2</div>
           <p class="tagline">“Innovating Plant.”</p>
         </div>
         <div class="social-links">
-          <span>LinkedIn</span>
-          <span>GitHub</span>
-          <span>UMT Portal</span>
+           <a href=”https://www.linkedin.com”
+          <a href=”https://github.com/yourusername”
+          <a href="#" target="_blank">UMT Portal</a>
         </div>
       </div>
 
-      <!-- Card 2: Location -->
+      <!-- Location -->
       <div class="card location">
         <h2>Location</h2>
         <p>Universiti Malaysia Terengganu (UMT)</p>
         <p>Kuala Nerus</p>
       </div>
 
-      <!-- Card 5: Hobby -->
+      <!-- Hobby -->
       <div class="card hobby">
         <h2>Hobby</h2>
         <p>Evening walks at Pantai UMT</p>
       </div>
 
-      <!-- Card 3: Subjects -->
+      <!-- Reflection (New Card) -->
+      <div class="card reflection">
+        <h2>Why Food Tech Matters in Malaysia</h2>
+        <p>
+          Sustainable food security is crucial for our future. By optimizing local
+          processing methods, we can reduce waste and improve nutrition.
+        </p>
+      </div>
+
+      <!-- Subjects -->
       <div class="card tech">
         <h2>Subjects</h2>
         <p>
@@ -195,7 +233,7 @@
         </p>
       </div>
 
-      <!-- Card 4: Case Study -->
+      <!-- Case Study -->
       <div class="card case-study">
         <h2>Case Study</h2>
         <p>
@@ -204,14 +242,15 @@
         </p>
       </div>
 
-      <!-- Card 6: Playlist -->
+      <!-- Playlist -->
       <div class="card playlist">
         <h2>Study Playlist</h2>
         <p>Calm oceanic and instrumental tracks for focused study sessions.</p>
-        <div class="player">
-          Music Player Placeholder
-        </div>
+
+        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6cXmvyzvXGYDH4PQmYRVou?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
       </div>
+
     </div>
   </div>
 </body>

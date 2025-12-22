@@ -1,10 +1,12 @@
+```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Ahmad Farihim | Student Landing Page</title>
+  <title>Ahmad Farihin | Student Landing Page</title>
 
+  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -85,7 +87,24 @@
     .case-study { grid-column: span 6; }
     .playlist { grid-column: span 12; }
 
-    /* Case Study layout */
+    .profile .name {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .profile .program {
+      margin-top: 4px;
+      font-weight: 500;
+      color: var(--accent);
+    }
+
+    .profile .tagline {
+      margin-top: 12px;
+      font-style: italic;
+      color: var(--text-secondary);
+    }
+
+    /* Case Study layout with new column */
     .case-content {
       display: grid;
       grid-template-columns: 2fr 1fr;
@@ -128,6 +147,7 @@
 
       .case-content {
         grid-template-columns: 1fr;
+        gap: 12px;
       }
     }
   </style>
@@ -136,32 +156,37 @@
   <div class="container">
     <div class="grid">
 
+      <!-- Profile -->
       <div class="card profile">
         <div>
-          <div style="font-size:1.6rem;font-weight:700;">AHMAD FARIHIN</div>
-          <div style="color:var(--accent);font-weight:500;">Agrotechnology • Year 2</div>
-          <p style="margin-top:12px;font-style:italic;">“Innovating Plant.”</p>
+          <div class="name">AHMAD FARIHIN</div>
+          <div class="program">Agrotechnology • Year 2</div>
+          <p class="tagline">“Innovating Plant.”</p>
         </div>
       </div>
 
+      <!-- Location -->
       <div class="card location">
         <h2>Location</h2>
         <p>Universiti Malaysia Terengganu (UMT)<br>Kuala Nerus</p>
       </div>
 
+      <!-- Hobby -->
       <div class="card hobby">
         <h2>Hobby</h2>
         <p>Evening walks at Pantai UMT</p>
       </div>
 
+      <!-- Reflection -->
       <div class="card reflection">
         <h2>Why Food Tech Matters in Malaysia</h2>
         <p>
-          Sustainable food security is crucial for our future by optimizing local
-          processing methods.
+          Sustainable food security is crucial for our future. By optimizing local
+          processing methods, we can reduce waste and improve nutrition.
         </p>
       </div>
 
+      <!-- Subjects -->
       <div class="card tech">
         <h2>Subjects</h2>
         <p>
@@ -172,7 +197,7 @@
         </p>
       </div>
 
-      <!-- Updated Case Study -->
+      <!-- Case Study (UPDATED) -->
       <div class="card case-study">
         <h2>Case Study</h2>
         <div class="case-content">
@@ -184,7 +209,7 @@
           </div>
           <div>
             <a
-              href="[PASTE YOUR APP URL HERE]"
+              href="https://s80793-lgtm.github.io/focus-timer-app/App.html"
               target="_blank"
               class="try-app-btn"
             >
@@ -194,6 +219,7 @@
         </div>
       </div>
 
+      <!-- Playlist -->
       <div class="card playlist">
         <h2>Study Playlist</h2>
         <p>Calm oceanic and instrumental tracks for focused study sessions.</p>
@@ -213,3 +239,4 @@
   </div>
 </body>
 </html>
+```

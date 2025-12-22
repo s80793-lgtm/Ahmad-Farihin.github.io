@@ -1,4 +1,3 @@
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,7 +5,6 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Ahmad Farihim | Student Landing Page</title>
 
-  <!-- Google Font -->
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
   <style>
@@ -16,7 +14,7 @@
       --border: #e5e7eb;
       --text-primary: #0f172a;
       --text-secondary: #64748b;
-      --accent: #0b3c5d; /* Ocean Blue */
+      --accent: #0b3c5d;
       --radius: 16px;
     }
 
@@ -40,7 +38,6 @@
     .grid {
       display: grid;
       grid-template-columns: repeat(12, 1fr);
-      grid-auto-rows: minmax(120px, auto);
       gap: 20px;
     }
 
@@ -55,17 +52,6 @@
       transition: transform 0.25s ease, box-shadow 0.25s ease;
     }
 
-.profile {
-  grid-column: span 6;
-  grid-row: span 2;
-
-  background-image: url('bg.jpg');//kene pastikan bg.jpg ada dalam folder yang sama
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-}
-
-    /* Hover effect */
     .card:hover {
       transform: scale(1.02);
       box-shadow: 0 10px 25px rgba(15, 23, 42, 0.08);
@@ -84,87 +70,47 @@
       line-height: 1.6;
     }
 
-    /* Desktop layout */
     .profile {
       grid-column: span 6;
       grid-row: span 2;
+      background-image: url('bg.jpg');
+      background-size: cover;
+      background-position: center;
     }
 
-    .location {
-      grid-column: span 3;
-    }
+    .location { grid-column: span 3; }
+    .hobby { grid-column: span 3; }
+    .reflection { grid-column: span 3; }
+    .tech { grid-column: span 6; }
+    .case-study { grid-column: span 6; }
+    .playlist { grid-column: span 12; }
 
-    .hobby {
-      grid-column: span 3;
-    }
-
-    .reflection {
-      grid-column: span 3;
-    }
-
-    .tech {
-      grid-column: span 6;
-    }
-
-    .case-study {
-      grid-column: span 6;
-    }
-
-    .playlist {
-      grid-column: span 12;
-    }
-
-    .profile .name {
-      font-size: 1.6rem;
-      font-weight: 700;
-    }
-
-    .profile .program {
-      margin-top: 4px;
-      font-weight: 500;
-      color: var(--accent);
-    }
-
-    .profile .tagline {
-      margin-top: 12px;
-      font-style: italic;
-      color: var(--text-secondary);
-    }
-
-    .social-links {
-      display: flex;
-      gap: 12px;
-      margin-top: 16px;
-      font-size: 0.85rem;
-    }
-
-    .social-links a {
-      padding: 6px 12px;
-      border: 1px solid var(--border);
-      border-radius: 999px;
-      text-decoration: none;
-      color: var(--text-secondary);
-      transition: background-color 0.2s ease, color 0.2s ease;
-    }
-
-    .social-links a:hover {
-      background-color: var(--accent);
-      color: #ffffff;
-    }
-
-    .playlist .player {
-      margin-top: 14px;
-      height: 64px;
-      border-radius: 12px;
-      background: linear-gradient(90deg, #dbeafe, #f1f5f9);
-      display: flex;
+    /* Case Study layout */
+    .case-content {
+      display: grid;
+      grid-template-columns: 2fr 1fr;
+      gap: 20px;
       align-items: center;
-      justify-content: center;
-      color: var(--text-secondary);
-      font-size: 0.9rem;
     }
 
-    /* Mobile layout */
+    .try-app-btn {
+      display: inline-block;
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: linear-gradient(135deg, #0b3c5d, #2563eb);
+      color: #ffffff;
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-align: center;
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .try-app-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 12px 22px rgba(37, 99, 235, 0.35);
+    }
+
     @media (max-width: 768px) {
       .grid {
         grid-template-columns: 1fr;
@@ -179,6 +125,10 @@
       .playlist {
         grid-column: span 1;
       }
+
+      .case-content {
+        grid-template-columns: 1fr;
+      }
     }
   </style>
 </head>
@@ -186,43 +136,32 @@
   <div class="container">
     <div class="grid">
 
-      <!-- Profile -->
       <div class="card profile">
         <div>
-          <div class="name">AHMAD FARIHIN</div>
-          <div class="program">Agrotechnology • Year 2</div>
-          <p class="tagline">“Innovating Plant.”</p>
-        </div>
-        <div class="social-links">
-           <a href=”https://www.linkedin.com”
-          <a href=”https://github.com/yourusername”
-          <a href="#" target="_blank">UMT Portal</a>
+          <div style="font-size:1.6rem;font-weight:700;">AHMAD FARIHIN</div>
+          <div style="color:var(--accent);font-weight:500;">Agrotechnology • Year 2</div>
+          <p style="margin-top:12px;font-style:italic;">“Innovating Plant.”</p>
         </div>
       </div>
 
-      <!-- Location -->
       <div class="card location">
         <h2>Location</h2>
-        <p>Universiti Malaysia Terengganu (UMT)</p>
-        <p>Kuala Nerus</p>
+        <p>Universiti Malaysia Terengganu (UMT)<br>Kuala Nerus</p>
       </div>
 
-      <!-- Hobby -->
       <div class="card hobby">
         <h2>Hobby</h2>
         <p>Evening walks at Pantai UMT</p>
       </div>
 
-      <!-- Reflection (New Card) -->
       <div class="card reflection">
         <h2>Why Food Tech Matters in Malaysia</h2>
         <p>
-          Sustainable food security is crucial for our future. By optimizing local
-          processing methods, we can reduce waste and improve nutrition.
+          Sustainable food security is crucial for our future by optimizing local
+          processing methods.
         </p>
       </div>
 
-      <!-- Subjects -->
       <div class="card tech">
         <h2>Subjects</h2>
         <p>
@@ -233,26 +172,44 @@
         </p>
       </div>
 
-      <!-- Case Study -->
+      <!-- Updated Case Study -->
       <div class="card case-study">
         <h2>Case Study</h2>
-        <p>
-          <strong>Starch Gelatinization in Local Kuih</strong><br />
-          Analyzing texture profiles of Kuih Lapis.
-        </p>
+        <div class="case-content">
+          <div>
+            <p>
+              <strong>Starch Gelatinization in Local Kuih</strong><br />
+              Analyzing texture profiles of Kuih Lapis.
+            </p>
+          </div>
+          <div>
+            <a
+              href="[PASTE YOUR APP URL HERE]"
+              target="_blank"
+              class="try-app-btn"
+            >
+              🚀 Try My Focus Timer App
+            </a>
+          </div>
+        </div>
       </div>
 
-      <!-- Playlist -->
       <div class="card playlist">
         <h2>Study Playlist</h2>
         <p>Calm oceanic and instrumental tracks for focused study sessions.</p>
 
-        <iframe data-testid="embed-iframe" style="border-radius:12px" src="https://open.spotify.com/embed/track/6cXmvyzvXGYDH4PQmYRVou?utm_source=generator" width="100%" height="352" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
-
+        <iframe
+          style="border-radius:12px"
+          src="https://open.spotify.com/embed/track/6cXmvyzvXGYDH4PQmYRVou"
+          width="100%"
+          height="352"
+          frameborder="0"
+          allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
+          loading="lazy">
+        </iframe>
       </div>
 
     </div>
   </div>
 </body>
 </html>
-```
